@@ -1,0 +1,26 @@
+.container {
+  font-family: "Roboto", sans-serif;
+  margin: 10px 14px;
+}
+.fingerScanMain {
+  border: 1px solid;
+  padding: 14px;
+}
+.dropdownMain {
+  display: flex;
+  width: 17%;
+  flex-direction: column;
+}
+.dropdown {
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 14px;
+}
+.label {
+  padding-right: 8px;
+}
+.scanButton {
+  border-radius: 5px;
+  margin-bottom: 14px;
+  padding: 3px;
+}

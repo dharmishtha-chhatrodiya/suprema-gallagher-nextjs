@@ -1,0 +1,42 @@
+.loginFromWrapper {
+  max-width: 260px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.loginFromWrapper .loginTitle {
+  font-size: 24px;
+  font-family: Helvetica;
+  font-weight: 700;
+  line-height: 28px;
+  color: #000;
+  text-align: center;
+}
+.loginFromWrapper .loginForm .formGroup {
+  margin-bottom: 20px;
+}
+.loginFromWrapper .loginForm .formGroup input {
+  height: 44px;
+  min-width: unset;
+  background-color: #f2f2f2 !important;
+  border-radius: 2px;
+  max-width: unset;
+  outline: 0;
+  box-shadow: none;
+  border: transparent;
+  padding: 0 20px;
+  width: 100%;
+}
+.loginFromWrapper .loginForm .btnOrange {
+  text-transform: uppercase;
+  width: 100%;
+  height: 48px;
+  border: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 2px;
+  margin-top: 12px;
+  background-color: #ee5731;
+  color: #fff;
+}

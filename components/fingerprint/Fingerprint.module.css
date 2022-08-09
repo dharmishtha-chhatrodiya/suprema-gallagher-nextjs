@@ -1,0 +1,507 @@
+/************************** fingerprint scan design ***************************/
+.fignerScanWrapper {
+  width: 756px;
+  height: 200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fignerScanWrapper .fingerScanLeft {
+  width: 368px;
+  height: 200px;
+  margin-right: 20px;
+  background-color: #f2f2f2;
+  position: relative;
+}
+.fignerScanWrapper .fingerScanLeft .fingerScanFilters {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 10px;
+  top: 10px;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .fingerScanFiltersDropdownFirst,
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .fingerScanFiltersDropdownSecond {
+  position: relative;
+  margin-right: 12px;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .fingerScanFiltersDropdownFirst::after,
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .fingerScanFiltersDropdownSecond::after {
+  content: "";
+  background-image: url(/usersearch/arrow-down.svg);
+  width: 10px;
+  height: 8px;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 12px;
+  top: 11px;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .fingerScanFiltersDropdownFirst
+  .searchList,
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .fingerScanFiltersDropdownSecond
+  .searchList {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 0 16px;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: 0;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .rawImageWrapper
+  .controlCheckbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 23px;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .rawImageWrapper
+  .controlCheckbox
+  input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .rawImageWrapper
+  .controlIndicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 10px;
+  width: 10px;
+  background: 0 0;
+  border: 1.5px solid #a3a3a3;
+  border-radius: 4px;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .rawImageWrapper
+  .controlCheckbox
+  input:checked
+  ~ .controlIndicator {
+  background: #ee5731;
+  border: 1.5px solid #ee5731;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .rawImageWrapper
+  .control:hover
+  input:not([disabled]):checked
+  ~ .controlIndicator,
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .rawImageWrapper
+  .controlCheckbox
+  input:checked:focus
+  ~ .controlIndicator {
+  background: #ee5731;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .rawImageWrapper
+  .controlIndicator:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .rawImageWrapper
+  .controlCheckbox
+  input:checked
+  ~ .controlIndicator:after {
+  display: block;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScanFilters
+  .rawImageWrapper
+  .controlCheckbox
+  .controlIndicator:after {
+  left: 4px;
+  top: 0;
+  width: 2px;
+  height: 6px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 15px;
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay .fingerOne {
+  position: absolute;
+  top: 49px;
+  left: 4.5px;
+  transform: rotate(-12deg);
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay .fingerOne img {
+  width: 11px;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScannedDisplay
+  .fingerOne.active::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  height: 19px;
+  width: 19px;
+  border: 2px solid #ee5731;
+  top: -5px;
+  left: -6px;
+  border-radius: 50%;
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay .fingerTwo {
+  position: absolute;
+  top: 33px;
+  left: 20.5px;
+  transform: rotate(-8deg);
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay .fingerTwo img {
+  width: 15px;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScannedDisplay
+  .fingerTwo.active::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  height: 23px;
+  width: 23px;
+  border: 2px solid #ee5731;
+  top: -6px;
+  left: -5px;
+  border-radius: 50%;
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay .fingerThree {
+  position: absolute;
+  top: 21px;
+  left: 45px;
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay .fingerThree img {
+  width: 17px;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScannedDisplay
+  .fingerThree.active::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  height: 26px;
+  width: 26px;
+  border: 2px solid #ee5731;
+  top: -5px;
+  left: -6px;
+  border-radius: 50%;
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay .fingerFour {
+  position: absolute;
+  top: 33px;
+  left: 74.5px;
+  transform: rotate(12deg);
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay .fingerFour img {
+  width: 17px;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScannedDisplay
+  .fingerFour.active::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  height: 26px;
+  width: 26px;
+  border: 2px solid #ee5731;
+  top: -5px;
+  left: -6px;
+  border-radius: 50%;
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay .fingerFive {
+  position: absolute;
+  top: 73px;
+  right: 7px;
+  transform: rotate(42deg);
+}
+.fignerScanWrapper .fingerScanLeft .fingerScannedDisplay .fingerFive img {
+  width: 16px;
+}
+.fignerScanWrapper
+  .fingerScanLeft
+  .fingerScannedDisplay
+  .fingerFive.active::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  height: 23px;
+  width: 23px;
+  border: 2px solid #ee5731;
+  top: -5px;
+  left: -5px;
+  border-radius: 50%;
+}
+.fignerScanWrapper .fingerScanRight {
+  width: 368px;
+  height: 200px;
+  background-color: #f2f2f2;
+  position: relative;
+}
+.fignerScanWrapper .fingerScanRight .fingerScanFlotBtn {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer !important;
+}
+.fignerScanWrapper .fingerScanRight .fingerScanFlotBtn .actionBtns {
+  cursor: pointer;
+}
+.fignerScanWrapper .fingerScanRight .fingerScanFlotBtn .actionBtns img {
+  width: 28px;
+}
+.fignerScanWrapper .fingerScanRight .finerScanItemWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 240px;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: 0 auto;
+}
+.fignerScanWrapper .fingerScanRight .finerScanItemWrapper .fingerScanItem {
+  width: 78px;
+  height: 86px;
+  background-color: #fff;
+  border: 1px solid #e3e9ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-right: 30px;
+}
+.fignerScanWrapper
+  .fingerScanRight
+  .finerScanItemWrapper
+  .fingerScanItem:nth-child(2n) {
+  margin-right: 0;
+}
+.fignerScanWrapper
+  .fingerScanRight
+  .finerScanItemWrapper
+  .fingerScanItem:last-child {
+  margin-right: 0;
+}
+.fignerScanWrapper .fingerScanRight .finerScanItemWrapper .fingerScanItem img {
+  height: 94%;
+  width: 98%;
+  object-fit: contain;
+}
+.fignerScanWrapper .fingerScanRight .finerScanItemWrapper .fingerScanItem span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #bebebe;
+  font-family: Helvetica;
+}
+.fignerScanWrapper
+  .fingerScanRight
+  .finerScanItemWrapper
+  .fingerScanItem
+  .fingerScanAction {
+  position: absolute;
+  bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.fignerScanWrapper
+  .fingerScanRight
+  .finerScanItemWrapper
+  .fingerScanItem
+  .fingerScanAction
+  .actionBtns {
+  width: 32px;
+  height: 28px;
+  background: #fff;
+  border: 1px solid #ee5731;
+  border-radius: 2px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.fignerScanWrapper
+  .fingerScanRight
+  .finerScanItemWrapper
+  .fingerScanItem
+  .fingerScanAction
+  .actionBtns.delete {
+  border-color: red;
+}
+.fignerScanWrapper
+  .fingerScanRight
+  .finerScanItemWrapper
+  .fingerScanItem
+  .fingerScanAction
+  .actionBtns.delete
+  img {
+  width: fit-content;
+  height: fit-content;
+}
+.fignerScanWrapper
+  .fingerScanRight
+  .finerScanItemWrapper
+  .fingerScanItem
+  .fingerScanAction
+  .actionBtns:last-child {
+  margin-right: 0;
+}
+
+/************************** fingerprint scan design ***************************/
+.footerWrapper {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #a49c9e;
+}
+.footerWrapper .exitSearchLink {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+.footerWrapper .exitSearchLink img {
+  margin-right: 10px;
+}
+.footerWrapper .exitSearchLink span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+}
+.btnGreen {
+  background-color: #13c830;
+  color: #fff;
+}
+.btnOrange {
+  background-color: #ee5731;
+  color: #fff;
+}
+.footerWrapper .footerButtonWrapper {
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+}
+.footerWrapper .footerButtonWrapper button {
+  width: 120px;
+  height: 36px;
+}
+.footerWrapper .footerButtonWrapper .btnOrange {
+  margin-right: 16px;
+  border-radius: 2px;
+}
+/* right hand css  */
+.fignerScanWrapper .fingerScannedDisplayright .fingerOne {
+  left: unset;
+  transform: rotate(24deg);
+  right: 6px;
+}
+.fignerScanWrapper .fingerScannedDisplayright .fingerTwo {
+  left: unset;
+  transform: rotate(13deg);
+  right: 22px;
+}
+.fignerScanWrapper .fingerScannedDisplayright .fingerThree {
+  position: absolute;
+  top: 21px;
+  left: 59px;
+  transform: rotate(8deg);
+}
+.fignerScanWrapper .fingerScannedDisplayright .fingerFour {
+  top: 34px;
+  left: 30px;
+  transform: rotate(-8deg);
+}
+.fignerScanWrapper .fingerScannedDisplayright .fingerFive {
+  top: 74px;
+  left: 6px;
+  right: unset;
+  transform: rotate(-37deg);
+}
+.fignerScanWrapper .fingerScannedDisplayright .fingerFive.active::after {
+  height: 23px;
+  width: 23px;
+  top: -5px;
+  left: -5px;
+}
+.removeActionBtns {
+  position: relative;
+  left: 8px;
+  top: 44px;
+  height: 0;
+}

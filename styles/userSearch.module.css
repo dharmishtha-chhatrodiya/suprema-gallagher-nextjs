@@ -1,0 +1,242 @@
+.container {
+  min-width: 815px;
+  min-height: 400px;
+  max-width: 815px;
+  max-height: 400px;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  flex-direction: column;
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Helvetica;
+  overflow: hidden;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+.main {
+  width: 100%;
+}
+.container .btnOrange {
+  background-color: #ee5731;
+  color: #fff;
+}
+.container input {
+  outline: 0;
+}
+.container button {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.container .headerlogoWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 64px;
+  border-bottom: 1px solid #ee5731;
+  margin-bottom: 20px;
+}
+.container .headerlogoWrapper .logoSection {
+  width: 240px;
+}
+.container .headerlogoWrapper .logoSection img {
+  width: 100%;
+}
+.userlistfilterWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 756px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.userlistfilterWrapper .searchbyDropdown {
+  margin-right: 20px;
+  position: relative;
+}
+.userlistfilterWrapper .searchbyDropdown::after {
+  content: "";
+  background-image: url(/usersearch/arrow-down.svg);
+  width: 10px;
+  height: 8px;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 16px;
+  top: 17px;
+}
+.userlistfilterWrapper .searchbyDropdown .searchList {
+  width: 180px;
+  height: 40px;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 0 16px;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: 0;
+}
+.userlistfilterWrapper .searchtextBox {
+  margin-right: 20px;
+}
+.userlistfilterWrapper .searchtextBox input {
+  max-width: 312px;
+  min-width: 312px;
+  height: 40px;
+  height: 40px;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 0 16px;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
+.userlistfilterWrapper .exactsearchWrapper {
+  margin-right: 20px;
+  position: relative;
+}
+.userlistfilterWrapper .exactsearchWrapper .controlCheckbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
+.userlistfilterWrapper .exactsearchWrapper .controlCheckbox input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  display: none;
+}
+.userlistfilterWrapper .exactsearchWrapper .controlIndicator {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background: 0 0;
+  border: 1.5px solid #a3a3a3;
+  border-radius: 4px;
+}
+.userlistfilterWrapper
+  .exactsearchWrapper
+  .controlCheckbox
+  input:checked
+  ~ .controlIndicator {
+  background: #ee5731;
+  border: 1.5px solid #ee5731;
+}
+.userlistfilterWrapper
+  .exactsearchWrapper
+  .controlCheckbox
+  input:checked:focus
+  ~ .controlIndicator,
+.userlistfilterWrapper
+  .exactsearchWrapper
+  .control:hover
+  input:not([disabled]):checked
+  ~ .controlIndicator {
+  background: #ee5731;
+}
+.userlistfilterWrapper .exactsearchWrapper .controlIndicator:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.userlistfilterWrapper
+  .exactsearchWrapper
+  .controlCheckbox
+  input:checked
+  ~ .controlIndicator:after {
+  display: block;
+}
+.userlistfilterWrapper
+  .exactsearchWrapper
+  .controlCheckbox
+  .controlIndicator:after {
+  left: 4px;
+  top: 0px;
+  width: 3px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.userlistfilterWrapper .searchBtn button {
+  background: #ee5731;
+  border-radius: 2px;
+  width: 80px;
+  height: 40px;
+  border: transparent;
+}
+.userlistfilterWrapper .searchBtn button img {
+  width: 18px;
+}
+.userlistWrapper {
+  width: 756px;
+  margin: 0 auto;
+  max-height: 240px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.userlistWrapper::-webkit-scrollbar {
+  width: 2px;
+}
+.userlistWrapper::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.userlistWrapper::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #6d6d6d;
+}
+.userlistWrapper .userlistTabel {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #d4d4d4;
+  position: relative;
+}
+.userlistWrapper .userlistTabel thead {
+  background: #a49c9e;
+  height: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 999999;
+}
+.userlistWrapper .userlistTabel thead th {
+  color: #fff;
+  font-family: Helvetica;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  border: 1px solid #ddd;
+}
+.userlistWrapper .userlistTabel tbody tr td {
+  border: 1px solid #d4d4d4;
+  text-align: center;
+  height: 40px;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
+.userlistWrapper .userlistTabel tbody tr td .edit-icon {
+  cursor: pointer !important;
+}

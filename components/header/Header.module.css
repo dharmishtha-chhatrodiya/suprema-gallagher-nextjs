@@ -1,0 +1,15 @@
+.headerLogoWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  border-bottom: 1px solid #ee5731;
+  margin-bottom: 20px;
+}
+.headerLogoWrapper .logoSection {
+  width: 240px;
+}
+.headerLogoWrapper .logoSection img {
+  width: 100%;
+}
